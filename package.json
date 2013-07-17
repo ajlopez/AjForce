@@ -1,0 +1,19 @@
+{ "name": "ajforce"
+, "description": "Multi-tenant applications for Node.js"
+, "keywords": [ "multitenant", "salesforce" ]
+, "version": "0.0.1alpha"
+, "author": "Angel 'Java' Lopez <webmaster@ajlopez.com> (http://www.ajlopez.com)"
+, "repository": { "type": "git", "url": "git://github.com/ajlopez/AjForce.git" }
+, "main": "./lib/ajforce.js"
+, "engines": { "node": ">= 0.6.0 && < 0.11.0" }
+, "scripts": {
+    "test": "node ./test.js"
+  }
+, "bin": {
+    "ajforce": "./bin/ajforce"
+  }
+, "dependencies": {
+  }
+, "devDependencies": {
+  }
+}
