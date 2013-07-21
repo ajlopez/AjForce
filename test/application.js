@@ -15,3 +15,4 @@ assert.ok(app);
 assert.equal(app.Name, 'Warehouse');
 assert.equal(app.Description, 'Warehouse Application');
 assert.equal(app.Author, 'me');
+
