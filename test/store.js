@@ -29,3 +29,18 @@ var result = store1.get(2);
 assert.ok(result);
 assert.equal(result.Id, 2);
 assert.equal(result.Name, 'Row 2');
+
+// put plain object, get it, modified result, and get it again
+
+var row3 = { Id: 3, Name: 'Row 3' };
+store1.put(row3);
+var result = store1.get(3);
+assert.ok(result);
+assert.equal(result.Id, 3);
+assert.equal(result.Name, 'Row 3');
+result.Name = 'A new Row 3';
+var result2 = store1.get(3);
+assert.ok(result2);
+assert.equal(result2.Id, 3);
+assert.equal(result2.Name, 'Row 3');
+
