@@ -44,3 +44,12 @@ assert.ok(result2);
 assert.equal(result2.Id, 3);
 assert.equal(result2.Name, 'Row 3');
 
+// add a new row, obtaining the new id
+
+var row4 = { Name: 'Row 4' };
+var result = store1.add(row4);
+assert.equal(result, 4);
+assert.equal(row4.Id, 4);
+
+
+
