@@ -51,5 +51,10 @@ var result = store1.add(row4);
 assert.equal(result, 4);
 assert.equal(row4.Id, 4);
 
+// delete a row
+
+store1.delete(3);
+assert.equal(store1.get(3), null);
+
 
 
