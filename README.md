@@ -1,6 +1,17 @@
-# AjStore
+# AjForce
 
 Multi-tenant applications for Node.js
+
+The idea is to have:
+
+- Applications
+- Entities in Application
+- Properties in Entity
+- CRUD web pages for Applications, Entities, Properties
+- CRUD web pages for a running Application
+- In-Memory Store
+- MySQL Store
+- Apex-like language support. First candidate: JavaScript itself
 
 ## Installation
 
