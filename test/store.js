@@ -56,5 +56,12 @@ assert.equal(row4.Id, 4);
 store1.delete(3);
 assert.equal(store1.get(3), null);
 
+// query by name
+
+var result = store1.query({ Name: 'Row 4' });
+assert.ok(result);
+assert.equal(result.length, 1);
+assert.equal(result[0].Name, 'Row 4');
+assert.equal(result[0].Id, 4);
 
 
