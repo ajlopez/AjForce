@@ -1,34 +1,37 @@
 
-var ajforce = require('..'),
-    assert = require('assert');
+var ajforce = require('..');
     
-// create property in entity
+exports['create property in entity'] = function (test) {
+    var app = ajforce.createApplication('Warehouse');
+    var entity = app.createEntity('Product');
+    var property = entity.createProperty('Name');
 
-var app = ajforce.createApplication('Warehouse');
-var entity = app.createEntity('Product');
-var property = entity.createProperty('Name');
+    test.ok(property);
+    test.ok(property.Name, 'Name');
 
-assert.ok(property);
-assert.ok(property.Name, 'Name');
+    var properties = entity.getProperties();
 
-var properties = entity.getProperties();
+    test.ok(properties);
+    test.equal(properties.length, 1);
+    test.equal(properties[0].Name, 'Name');
+}
 
-assert.ok(properties);
-assert.equal(properties.length, 1);
-assert.equal(properties[0].Name, 'Name');
+exports['add a second property with options'] = function (test) {
+    var app = ajforce.createApplication('Warehouse');
+    var entity = app.createEntity('Product');
+    entity.createProperty('Name');
 
-// then, add a second property with options
+    var property = entity.createProperty('Price', { Description: 'Product Price' });
 
-var property = entity.createProperty('Price', { Description: 'Product Price' });
+    test.ok(property);
+    test.equal(property.Name, 'Price');
+    test.equal(property.Description, 'Product Price');
 
-assert.ok(property);
-assert.equal(property.Name, 'Price');
-assert.equal(property.Description, 'Product Price');
+    var properties = entity.getProperties();
 
-var properties = entity.getProperties();
-
-assert.ok(properties);
-assert.equal(properties.length, 2);
-assert.equal(properties[0].Name, 'Name');
-assert.equal(properties[1].Name, 'Price');
-assert.equal(properties[1].Description, 'Product Price');
+    test.ok(properties);
+    test.equal(properties.length, 2);
+    test.equal(properties[0].Name, 'Name');
+    test.equal(properties[1].Name, 'Price');
+    test.equal(properties[1].Description, 'Product Price');
+}
