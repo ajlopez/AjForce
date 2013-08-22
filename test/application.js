@@ -15,3 +15,11 @@ exports['create application with options'] = function (test) {
     test.equal(app.Author, 'me');
 }
 
+exports['get applications'] = function (test) {
+    var apps = ajforce.getApplications();
+    
+    test.ok(apps);
+    test.ok(Array.isArray(apps));
+    test.notEqual(apps.length, 0);
+}
+
